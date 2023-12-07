@@ -1,42 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#root{
+  width: 100vw;
+  height: 150vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body{
+  margin: 0;
+  padding: 0;
 }
-.logo:hover {
+.general-container{
+  width: 100%;
+  height: 100%;
+}
+/* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+#Dark{
+  background-color: #282c34;
+  color: #f2f4f6;
+}
+#Light{
+  background-color: #f2f4f6;
+  color: #242424;
+}
+.nav-information{
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+}
+.nav-information header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.toggle{
+  display: block;
+  top: 0;
+  left: 67%;
+  margin: 25px auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-myImage{
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #282c34;
+}
+#Dark .container-myImage{
+  box-shadow: 0 0 20px #f2f4f6;
+}
+.container-myImage img{
+  width: 100%;
+  height: 100%;
+  transform: rotate(90deg);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: -30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.link-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
 }
-
-.card {
-  padding: 2em;
+.link-buttons button{
+  border: none;
+  background: #282c34;
+  color: #f2f4f6;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
 }
-
-.read-the-docs {
-  color: #888;
+#Dark .link-buttons button{
+  background: #f2f4f6;
+  color: #282c34;
+  cursor: pointer;
+}
+.link-buttons button:hover{
+  transform: scale(1.04);
+  background: #989898;
+}
+#Dark .link-buttons button:hover{
+  background: #808080;
+  color: #f2f4f6;
+}
+.fa-file,
+.fa-linkedin{
+  font-size: 20px;
 }
