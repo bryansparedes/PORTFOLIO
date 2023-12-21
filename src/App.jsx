@@ -1,54 +1,35 @@
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import { Home } from './assets/Pages/Home'
-import { Contact } from './assets/Pages/Contact'
-import { useState } from 'react'
-import ReactSwitch from 'react-switch';
-import { useThemeContext } from './assets/Context/ThemeContext'
-import Moon from './assets/Images/moon-svgrepo-com.svg';
-import Sun from './assets/Images/sun-2-svgrepo-com.svg';
+import About from './assets/Components/About/About'
+import Contact from './assets/Components/Contact/Contact'
+import Fotter from './assets/Components/Footer/Fotter'
+import Header from './assets/Components/Header/Header'
+import Home from './assets/Components/Home/Home'
+import Quialification from './assets/Components/Qualification/Quialification'
+import ScrollUp from './assets/Components/ScrollUp/ScrollUp'
+import Services from './assets/Components/Services/Services'
+import Skills from './assets/Components/Skills/Skills'
+import Testimonials from './assets/Components/Testimonials/Testimonials'
+import Work from './assets/Components/Work/Work'
+
 
 function App() {
-  
-  const {contextTheme, setContextTheme} = useThemeContext();
-  
-  const [checked, setChecked] = useState(false);
-
-  const handleSwitch = (nextChecked) => {
-    setContextTheme((state) => (state === 'Light'? 'Dark':'Light'))
-    setChecked(nextChecked)
-  }
 
   return (                         
-    <div className='general-container' id={contextTheme}>
-      <header>
-      <ReactSwitch
-        className='toggle'
-        onChange={handleSwitch}
-        checked={checked}
-        handleDiameter={28}
-        offColor="#f2f4f6"
-        onColor="#f2f4f6"
-        offHandleColor="#f2f4f6"
-        onHandleColor="#282c34"
-        height={0}
-        width={0}
-        borderRadius={6}
-        activeBoxShadow='none'
-        uncheckedHandleIcon={
-          <img src={Moon}/>
-        }
-        checkedHandleIcon={
-          <img src={Sun}/>
-        }
-      />
-      {/* <Layaut/> */}
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/contact' element={<Contact/>}/>
-      </Routes>
-      </header>
-    </div>
+    <>
+    <Header/>
+    <main className='main'>
+      <Home/>
+      <About/>
+      <Skills/>
+      <Services/>
+      <Quialification/>
+      <Work/>
+      <Testimonials/>
+      <Contact/>
+    </main>
+    <Fotter/>
+    <ScrollUp/>
+    </>
   )
 }
 
